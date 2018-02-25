@@ -29,3 +29,25 @@ var togetherInThisMoment = [inThisMoment, alsoInThisMoment];
 
 document.write(inThisMoment.format() + '</br>');
 document.write(inThisMoment._i.day + '</br>');
+
+//array
+var myArray = [2, 1, 4, 3, 0, 6, 7, 5];
+var sortThis = function(x, y){
+    return x - y;
+};
+
+document.write(myArray.sort() + '</br>');
+myArray.push(13, 100, 0);
+
+document.write(myArray.sort() + '</br>');
+parseInt(myArray);
+
+myArray.sort();
+document.write(myArray + '</br>');
+
+myArray.sort(sortThis);
+document.write(myArray);
+
+
+
+
