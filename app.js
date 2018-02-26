@@ -77,12 +77,16 @@ Cat.prototype.render = function(section){
 // document.write(choppedArray);
 
 var cat1 = new Cat(1);
-var cat2 = new Cat(2);
 var cat3 = new Cat(3);
-var cat4 = new Cat(4);
+var cat2 = new Cat(2);
 var cat5 = new Cat(5);
-var cat6 = new Cat(6);
+var cat4 = new Cat(4);
 var cat7 = new Cat(7);
+var cat6 = new Cat(6);
+
+catArray.sort(function(a, b){
+    return a.index - b.index;
+});
 
 var printAll = function(array, section){
     for(var i = 0; i < array.length; i++){
@@ -91,14 +95,36 @@ var printAll = function(array, section){
 }
 printAll(catArray, testSection);
 
-var newArray = catArray.splice(3);
-printAll(catArray, testSection2);
-printAll(newArray, testSection3);
+var testMoment = moment({year: 2018, month: 5, day: 10});
+testMoment.index = 3;
 
-var lonelyOne = newArray.shift();
-printAll(newArray, testSection4);
-document.write(lonelyOne.index);
-console.log(lonelyOne);
+var testMoment2 = moment({year: 2018, month: 5, day: 5});
+testMoment2.index = 2;
+
+var testMoment3 = moment({year: 2017, month: 11, day: 15});
+testMoment3.index = 10;
+
+var testMomentArray = [testMoment, testMoment2, testMoment3];
+console.log(testMomentArray.sort());
+
+var sortThis = testMomentArray.sort(function(a, b){
+    return a._d - b._d;
+});
+
+var sortThat = testMomentArray.sort(function(a, b){
+    return a.index - b.index;
+});
+
+
+
+// var newArray = catArray.splice(3);
+// printAll(catArray, testSection2);
+// printAll(newArray, testSection3);
+
+// var lonelyOne = newArray.shift();
+// printAll(newArray, testSection4);
+// document.write(lonelyOne.index);
+// console.log(lonelyOne);
 
 
 
