@@ -1,0 +1,65 @@
++//globally-scoped items
+
+declare global variables
+    -declare master array to hold all events
+    -declare variables to manipulate DOM elements(linked to HTML)
+
++//constructors and functions
+
+create new event = function(name, details, time){
+    new moment variable = moment(time);
+    new moment name property = name;
+    new moment details property = details;
+    push new moment into master array;
+};
+
+array sorting function(){
+    master array.sort(comparitive function(a, b){
+        return a - b;
+    });
+};
+
+array render function(index){
+    find index position in array;
+    grab elements in moment objects;
+    HTML elements.innerHTML populated by grabbed elements;
+};
+
+send to local storage function(){
+    localStorage.setItem('master array key', JSON.stringify(master array));
+};
+
+retrieve from local storage function(){
+    if('master array key' exists){
+    var retrieve = localStorage.getItem('master array key');
+    master array = JSON.parse(retrieve);
+    }
+};
+
++// event listener to create new events from timeline page
+
+form event listener('submit' , function(event){
+    event.preventDefault();
+    if(user enters incorrect or incomplete data){
+        alert user to complete form;
+        form reset;
+    }
+    create new event(form data as arguments for name, details, {time});
+    sort function();
+    store function();
+});
+
++//initial calls
+
+on page load(){
+    if(existing username){
+    retrieve from local storage function();
+    render timeline function();
+    *stretch goal*
+    capture current date/time;
+    render timeline in relation to current date/time;
+    }
+    render default timeline function();
+};
+
+

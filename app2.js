@@ -27,24 +27,22 @@ var storeMoments = function(){
 
 //get array function
 var getMoments = function(){
-
-  
     var retrievedMoments = localStorage.getItem('allMoments');
-   allMoments = JSON.parse(retrievedMoments);
-    
-}
+    allMoments = JSON.parse(retrievedMoments);
+};
+
 //form event listener
 addEvent.addEventListener('submit' , function(event) {
     event.preventDefault();
 
-        var newYear = addEvent.elements[3].valueAsNumber;
-        var newMonth = addEvent.elements[4].valueAsNumber;
-        var newDay = addEvent.elements[5].valueAsNumber;
-        var newHour = addEvent.elements[6].valueAsNumber;
+    var newYear = addEvent.elements[3].valueAsNumber;
+    var newMonth = addEvent.elements[4].valueAsNumber;
+    var newDay = addEvent.elements[5].valueAsNumber;
+    var newHour = addEvent.elements[6].valueAsNumber;
 
-        createEvent(addEvent.elements[1].value, addEvent.elements[2].value, {year: newYear, month: newMonth, day: newDay, hour: newHour});
-        sortMoments();
-        storeMoments();
+    createEvent(addEvent.elements[1].value, addEvent.elements[2].value, {year: newYear, month: newMonth, day: newDay, hour: newHour});
+    sortMoments();
+    storeMoments();
 });
 
 createEvent('blah' , 'throwing spears at the sun', {year: 2018, month: 6, day: 15, hour: 6});
